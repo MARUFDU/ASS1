@@ -1,0 +1,12 @@
+file = open('mbox-short.txt')
+count = 0
+email_count = {}
+for x in file:
+    x = x.strip()
+    if x.startswith('From '):
+        words = x.split()
+        if words[1] in email_count:
+            email_count[words[1]] += 1
+        else:
+            email_count[words[1]] = 1
+print(email_count)
