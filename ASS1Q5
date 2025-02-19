@@ -1,0 +1,12 @@
+file = open('mbox.txt')
+count = 0 
+email_list = []
+for x in file:
+    x = x.strip()
+    if x.startswith('From '):
+        count += 1
+        words = x.split()
+        if words[1] not in email_list:
+            email_list.append(words[1])
+print(count)
+print(email_list)
