@@ -1,0 +1,11 @@
+text = open ('amth.txt')
+words = list()
+for line in text:
+    if(not line.startswith("Applied Mathematics")):
+        line=line.rstrip()
+        teachers_name=line.split()
+        for word in teachers_name:
+            if word not in words: 
+                words.append(word)
+words.sort()
+print(words)
