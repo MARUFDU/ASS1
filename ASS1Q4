@@ -1,0 +1,14 @@
+file = open('mbox.txt')
+total = 0.0
+count = 0
+for x in file:
+    if x.startswith('X-DSPAM-Confidence:'):
+        print(x)
+        value = float(x.split(':')[1].rstrip())
+        
+        total += value
+        count += 1
+
+avg = total/count
+print(count)
+print('Average of this values is = ', avg)
